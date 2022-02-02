@@ -14,8 +14,9 @@
 
 int	g_hold = 1;
 
-static void	handle_signal(void)
+static void	handle_signal(int sig)
 {
+	(void)sig;
 	g_hold = 0;
 }
 
