@@ -15,7 +15,6 @@
 
 # define PID_ERROR "Invalid PID.\n"
 # define USAGE_ERROR "Invalid usage.\nCorrect Usage: ./client <server_pid> <your_string>\n"
-# define ALLOC_ERROR "Allocation error.\n"
 # define SUCCESS "Message sent successfully."
 
 # include <signal.h>
