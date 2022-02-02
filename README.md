@@ -7,7 +7,7 @@ In order to do that, you are only allowed to use the UNIX signals SIGUSR1 and SI
 
 ## Compile and run
 
-- To compile, go to the project directory use the command make.  
+- To compile, go to the project directory and use the command make.  
 ```
 $ make
 ```
