@@ -1,20 +1,31 @@
-# MINITALK
+# **MINITALK**
 
 Objective: create a communication program in form of a client and server.
 
-## **Compile and run**
+## Compile and run
 
+- To compile, go to the project directory use the command make.  
 ```
-make
+$ make
 ```
+- Run the server side with ./server. The server will display it's PID, which you will need to run the client. Afther that, the server will wait for messages.
 ```
-./server
+$ ./server
+PID: 12345
 ```
+- **In another terminal** run the client. The command is ./client SERVER_PID "MESSAGE". 
 ```
-./client PID "Message you want to send to server"
+$ ./client 12345 "Testing"
 ```
-
-- To compile, use the command make.  
-- After that, run the server side with ./server. The server will display it's PID, which you will need to run the client.  
-- To run the client, you will use ./client SERVER_PID "MESSAGE".  
 - Server will receive this message and display it.  
+```
+$ ./server
+PID: 12345
+Testing
+```
+- Client will display a message indicating if everything went well.  
+```
+$ ./client 12345 "Testing"
+Message sent successfully
+```
+### **Server side won't exit, you can send as many messages as you want.**
