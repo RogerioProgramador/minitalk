@@ -14,7 +14,7 @@
 # define MINITALK_H
 
 # define PID_ERROR "Invalid PID.\n"
-# define USAGE_ERROR "Invalid usage.\nCorrect Usage: ./client <server_pid> <your_string>\n"
+# define USAGE_ERROR "Invalid Usage.\nCorrect Usage: ./client <pid> <string>"
 # define SUCCESS "Message sent successfully."
 
 # include <signal.h>
@@ -34,4 +34,5 @@ typedef struct s_minitalk
 	int		new_char;
 	char	*word;
 }			t_minitalk;
+
 #endif

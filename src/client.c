@@ -12,11 +12,11 @@
 
 #include "../minitalk.h"
 
-int lock = 1;
+int	g_hold = 1;
 
-static void	handle_signal()
+static void	handle_signal(void)
 {
-	lock = 0;
+	g_hold = 0;
 }
 
 int	send_char(char a, int pid)
@@ -38,18 +38,18 @@ int	send_char(char a, int pid)
 				return (0);
 		}
 		i >>= 1;
-		while (lock)
+		while (g_hold)
 		{
 		}
-		lock = 1;
+		g_hold = 1;
 	}
 	return (1);
 }
 
-int send_message(char *message, int pid)
+int	send_message(char *message, int pid)
 {
-	int		i;
-	
+	int	i;
+
 	i = 0;
 	while (message[i])
 	{
@@ -63,15 +63,15 @@ int send_message(char *message, int pid)
 	{
 		kill(pid, SIGUSR2);
 		i++;
-		while (lock)
+		while (g_hold)
 		{
 		}
-		lock = 1;
+		g_hold = 1;
 	}
 	return (1);
 }
 
-int print_and_return(char *string, int return_value, char **message)
+int	print_and_return(char *string, int return_value, char **message)
 {
 	ft_printf(string);
 	if (message)
@@ -84,14 +84,14 @@ int	main(int argc, char **argv)
 	t_client	client;
 
 	if (argc != 3)
-		return print_and_return(USAGE_ERROR, 1, 0);
+		return (print_and_return(USAGE_ERROR, 1, 0));
 	client.pid = ft_atoi(argv[1]);
 	client.message = ft_strdup(argv[2]);
 	if (ft_strlen(client.message) == 0)
-		return print_and_return(USAGE_ERROR, 1, &client.message);
+		return (print_and_return(USAGE_ERROR, 1, &client.message));
 	if (client.pid == 0)
-		return print_and_return(PID_ERROR, 1, &client.message);
+		return (print_and_return(PID_ERROR, 1, &client.message));
 	if (!send_message(client.message, client.pid))
-		return print_and_return(PID_ERROR, 1, &client.message);
-	return print_and_return(SUCCESS, 0, &client.message);
+		return (print_and_return(PID_ERROR, 1, &client.message));
+	return (print_and_return(SUCCESS, 0, &client.message));
 }
