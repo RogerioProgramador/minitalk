@@ -1,6 +1,9 @@
 # **MINITALK**
 
-Objective: create a communication program in form of a client and server.
+## Objective  
+Create a communication program in form of a client and server.  
+In order to do that, you are only allowed to use the UNIX signals SIGUSR1 and SIGUSR2.  
+  
 
 ## Compile and run
 
