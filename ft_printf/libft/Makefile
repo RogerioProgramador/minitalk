@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rogeriorslf <rogeriorslf@student.42.fr>    +#+  +:+       +#+         #
+#    By: rosf <rosf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 16:21:52 by rsiqueir          #+#    #+#              #
-#    Updated: 2021/05/31 16:50:33 by rogeriorslf      ###   ########.fr        #
+#    Updated: 2022/02/20 17:50:49 by rosf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -c -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 LIB = ranlib
 RM = rm -f

@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+         #
+#    By: rosf <rosf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/11 05:54:15 by rogeriorslf       #+#    #+#              #
-#    Updated: 2021/09/20 16:20:40 by rsiqueir         ###   ########.fr        #
+#    Updated: 2022/02/20 17:50:09 by rosf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBPATH = ./libft
 CC = gcc
-CFLAGS =
+CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 RM = rm -f
 
