@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rosf <rosf@student.42.fr>                  +#+  +:+       +#+         #
+#    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/20 13:20:43 by rsiqueir          #+#    #+#              #
-#    Updated: 2022/02/20 17:48:32 by rosf             ###   ########.fr        #
+#    Updated: 2022/02/22 04:16:05 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,35 +16,32 @@ SERVER = server
 LIB = ft_printf/libftprintf.a
 LIBPATH = ./ft_printf
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
 CLIENT_SRCS = src/client.c
 SERVER_SRCS = src/server.c
+OTHER_SRCS = src/utils.c
 
 CLIENT_OBJS = $(CLIENT_SRCS:%.c=%.o)
 SERVER_OBJS = $(SERVER_SRCS:%.c=%.o)
+OTHER_OBJS = $(OTHER_SRCS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(CLIENT) $(SERVER)
 
-$(CLIENT):		$(LIB) $(CLIENT_OBJS)
-					$(CC) $(CFLAGS) $(CLIENT_OBJS) $(LIB) -o $(CLIENT)
+$(CLIENT):		$(OTHER_OBJS) $(CLIENT_OBJS)
+					$(CC) $(CFLAGS) $(OTHER_OBJS) $(CLIENT_OBJS)  -o $(CLIENT)
 
-$(SERVER):		$(LIB) $(SERVER_OBJS)
-					$(CC) $(CFLAGS) $(SERVER_OBJS) $(LIB) -o $(SERVER)
-
-$(LIB):
-	make -C $(LIBPATH)
+$(SERVER):		$(OTHER_OBJS) $(SERVER_OBJS)
+					$(CC) $(CFLAGS) $(OTHER_OBJS) $(SERVER_OBJS) -o $(SERVER)
 
 clean:
-	make -C $(LIBPATH) clean
 	$(RM) src/*.o
 
 fclean: clean
-	make -C $(LIBPATH) fclean
 	$(RM) $(CLIENT) $(SERVER)
 
 re: fclean all

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:26:47 by rsiqueir          #+#    #+#             */
-/*   Updated: 2021/09/29 11:36:28 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/02/22 04:10:51 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ int	send_message(char *message, int pid)
 
 int	print_and_return(char *string, int return_value, char **message)
 {
-	ft_printf(string);
+	print_string(string);
+	print_string("\n");
 	if (message)
 		free(*message);
 	return (return_value);
@@ -88,9 +89,9 @@ int	main(int argc, char **argv)
 		return (print_and_return(USAGE_ERROR, 1, 0));
 	client.pid = ft_atoi(argv[1]);
 	client.message = ft_strdup(argv[2]);
-	if (ft_strlen(client.message) == 0)
+	if (!client.message[0])
 		return (print_and_return(USAGE_ERROR, 1, &client.message));
-	if (client.pid == 0)
+	if (client.pid <= 0)
 		return (print_and_return(PID_ERROR, 1, &client.message));
 	if (!send_message(client.message, client.pid))
 		return (print_and_return(PID_ERROR, 1, &client.message));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsiqueir <rsiqueir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 20:20:34 by rsiqueir          #+#    #+#             */
-/*   Updated: 2021/09/29 11:27:43 by rsiqueir         ###   ########.fr       */
+/*   Updated: 2022/02/22 03:33:23 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	handle_new_char(void)
 {
 	if (g_struct.new_char == 0)
 	{
-		ft_printf("%s", g_struct.word);
+		print_string(g_struct.word);
 		free(g_struct.word);
 		g_struct.word = 0;
 	}
@@ -75,10 +75,12 @@ int	main(void)
 	struct sigaction	sa;
 
 	init_global();
-	ft_bzero(&sa, sizeof(sa));
+	sa = (struct sigaction){};
 	sa.sa_sigaction = handle_signal;
 	sa.sa_flags = SA_SIGINFO;
-	ft_printf("PID: %i\n", getpid());
+	print_string("PID: ");
+	print_number(getpid());
+	print_string("\n");
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
