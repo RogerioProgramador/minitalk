@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:26:47 by rsiqueir          #+#    #+#             */
-/*   Updated: 2022/02/22 04:10:51 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/22 04:48:22 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minitalk.h"
+#include "minitalk.h"
 
 int	g_hold = 1;
 

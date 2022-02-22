@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 20:20:34 by rsiqueir          #+#    #+#             */
-/*   Updated: 2022/02/22 03:33:23 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/22 04:48:36 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minitalk.h"
+#include "minitalk.h"
 
 t_minitalk	g_struct;
 

@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 01:31:06 by coder             #+#    #+#             */
-/*   Updated: 2022/02/22 04:22:51 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/22 04:48:40 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minitalk.h"
+#include "minitalk.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
