@@ -13,8 +13,6 @@
 NAME = minitalk
 CLIENT = client
 SERVER = server
-LIB = ft_printf/libftprintf.a
-LIBPATH = ./ft_printf
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
